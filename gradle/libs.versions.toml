@@ -13,6 +13,8 @@ composeNavigation = "2.8.0-beta01"
 serialization = "1.6.3"
 composeAnimation = "1.7.0-beta01"
 coil = "2.6.0"
+adaptiveLayoutAndroid = "1.0.0-beta01"
+adaptiveNavigationAndroid = "1.0.0-beta01"
 
 
 
@@ -36,6 +38,8 @@ navigation-compose = { module = "androidx.navigation:navigation-compose", versio
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization"}
 androidx-compose-animation = { group = "androidx.compose.animation", name = "animation", version.ref = "composeAnimation" }
 coil = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+androidx-adaptive-layout-android = { group = "androidx.compose.material3.adaptive", name = "adaptive-layout-android", version.ref = "adaptiveLayoutAndroid" }
+androidx-adaptive-navigation-android = { group = "androidx.compose.material3.adaptive", name = "adaptive-navigation-android", version.ref = "adaptiveNavigationAndroid" }
 
 
 [plugins]

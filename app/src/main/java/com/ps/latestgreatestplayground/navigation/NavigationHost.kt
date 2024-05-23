@@ -4,9 +4,9 @@ import androidx.compose.animation.ExperimentalSharedTransitionApi
 import androidx.compose.animation.SharedTransitionLayout
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.ps.latestgreatestplayground.presentation.home.HomeDestination
 import com.ps.latestgreatestplayground.presentation.home.HomePane
@@ -20,8 +20,7 @@ import kotlin.reflect.typeOf
 
 @OptIn(ExperimentalSharedTransitionApi::class)
 @Composable
-fun NavigationHost(modifier: Modifier = Modifier) {
-    val navController = rememberNavController()
+fun NavigationHost(modifier: Modifier = Modifier, navController: NavHostController) {
 
     SharedTransitionLayout {
         NavHost(

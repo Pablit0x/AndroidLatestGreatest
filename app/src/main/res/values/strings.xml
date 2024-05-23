@@ -2,4 +2,6 @@
     <string name="app_name">LatestGreatestPlayground</string>
     <string name="navigate_to_profile_list">Navigate to Profile List</string>
     <string name="navigate_to_product_list">Navigate to Product List</string>
+    <string name="message">Message</string>
+    <string name="message_placeholder">Start typing…</string>
 </resources>
