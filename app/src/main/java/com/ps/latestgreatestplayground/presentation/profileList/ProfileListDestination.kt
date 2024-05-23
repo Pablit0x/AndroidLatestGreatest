@@ -1,9 +1,7 @@
 package com.ps.latestgreatestplayground.presentation.profileList
 
-import android.os.Build
 import android.os.Bundle
 import android.os.Parcelable
-import androidx.annotation.RequiresApi
 import androidx.navigation.NavType
 import kotlinx.parcelize.Parcelize
 import kotlinx.serialization.Serializable
@@ -26,7 +24,6 @@ val ProfileNavType = object: NavType<Profile>(isNullableAllowed = false) {
         return Json.decodeFromString<Profile>(value)
     }
 
-    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun get(bundle: Bundle, key: String): Profile? {
         return bundle.getParcelable(key, Profile::class.java) as Profile
     }
@@ -39,11 +36,3 @@ val ProfileNavType = object: NavType<Profile>(isNullableAllowed = false) {
 data class ProfileListUiState(
     val profiles: List<Profile> = emptyList()
 )
-
-sealed interface ProfileListEvent {
-
-}
-
-sealed interface ProfileListAction {
-    data class NavigateToProfileDetail(val imageResourceId: Int, val value: String) : ProfileListAction
-}

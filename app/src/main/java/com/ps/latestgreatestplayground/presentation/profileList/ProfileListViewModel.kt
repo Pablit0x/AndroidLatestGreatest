@@ -12,9 +12,6 @@ import kotlinx.coroutines.launch
 
 class ProfileListViewModel : ViewModel() {
 
-    private val _profileListEvent = MutableSharedFlow<ProfileListEvent>()
-    val profileListEvent = _profileListEvent.asSharedFlow()
-
     private val _profileListUiState = MutableStateFlow(ProfileListUiState())
     val profileListUiState = _profileListUiState.asStateFlow()
 
@@ -29,12 +26,4 @@ class ProfileListViewModel : ViewModel() {
             )
         }
     }
-
-    fun onAction(profileListAction: ProfileListAction) {
-        when (profileListAction) {
-            is ProfileListAction.NavigateToProfileDetail -> {}
-        }
-    }
-
-    private fun emitEvent(event: ProfileListEvent) = viewModelScope.launch { _profileListEvent.emit(value = event) }
 }
