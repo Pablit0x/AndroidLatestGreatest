@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LatestGreatestPlayground</string>
+    <string name="navigate_to_profile_list">Navigate to Profile List</string>
+    <string name="navigate_to_product_list">Navigate to Product List</string>
+</resources>
