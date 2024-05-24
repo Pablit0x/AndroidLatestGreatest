@@ -2,7 +2,6 @@ package com.ps.latestgreatestplayground.presentation.widget
 
 import android.content.Context
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.glance.GlanceComposable
@@ -33,56 +32,39 @@ import com.ps.latestgreatestplayground.R
 class MyWidget : GlanceAppWidget() {
     override suspend fun provideGlance(context: Context, id: GlanceId) {
         provideContent {
-            GlanceTheme {
-                Scaffold(backgroundColor = GlanceTheme.colors.widgetBackground) {
-                    Column(
-                        modifier = GlanceModifier.fillMaxSize().padding(16.dp)
-                            .clickable(onClick = actionStartActivity<MainActivity>()),
-                        verticalAlignment = Alignment.Vertical.CenterVertically,
-                        horizontalAlignment = Alignment.Horizontal.CenterHorizontally
-                    ) {
-                        Image(
-                            provider = ImageProvider(resId = R.drawable.bojack),
-                            contentDescription = null,
-                            contentScale = ContentScale.Fit,
-                            modifier = GlanceModifier.defaultWeight()
-                        )
-
-                        Spacer(modifier = GlanceModifier.height(8.dp))
-
-                        Text(
-                            text = context.getString(R.string.bojack_horseman), style = TextStyle(
-                                fontSize = 14.sp,
-                                fontWeight = FontWeight.Bold,
-                                fontFamily = FontFamily.Monospace
-                            )
-                        )
-                    }
-                }
-            }
+            MyWidgetContent(context = context)
         }
     }
 }
 
 @Composable
 @GlanceComposable
-fun MyWidgetContent() {
+fun MyWidgetContent(context: Context) {
     GlanceTheme {
-//        Row(
-//            modifier = GlanceModifier
-//                .fillMaxWidth()
-//                .padding(16.dp)
-//                .background(GlanceTheme.colors.background)
-//                .appWidgetBackground(),
-//            verticalAlignment = Alignment.CenterVertically,
-//            horizontalAlignment = Alignment.CenterHorizontally,
-//        ) {
-//            Image(
-//                ImageProvider(R.drawable.bojack),
-//                contentDescription = null
-//            )
+        Scaffold(backgroundColor = GlanceTheme.colors.widgetBackground) {
+            Column(
+                modifier = GlanceModifier.fillMaxSize().padding(16.dp)
+                    .clickable(onClick = actionStartActivity<MainActivity>()),
+                verticalAlignment = Alignment.Vertical.CenterVertically,
+                horizontalAlignment = Alignment.Horizontal.CenterHorizontally
+            ) {
+                Image(
+                    provider = ImageProvider(resId = R.drawable.bojack),
+                    contentDescription = null,
+                    contentScale = ContentScale.Fit,
+                    modifier = GlanceModifier.defaultWeight()
+                )
 
-        Text(text = stringResource(R.string.app_name))
-//        }
+                Spacer(modifier = GlanceModifier.height(8.dp))
+
+                Text(
+                    text = context.getString(R.string.bojack_horseman), style = TextStyle(
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.Bold,
+                        fontFamily = FontFamily.Monospace
+                    )
+                )
+            }
+        }
     }
 }
