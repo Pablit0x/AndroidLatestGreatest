@@ -3,6 +3,7 @@
     <string name="navigate_to_profile_list">Navigate to Profile List</string>
     <string name="navigate_to_product_list">Navigate to Product List</string>
     <string name="message">Message</string>
+    <string name="document">Document</string>
     <string name="message_placeholder">Start typing…</string>
     <string name="bojack_horseman">Bojack Horseman</string>
 </resources>

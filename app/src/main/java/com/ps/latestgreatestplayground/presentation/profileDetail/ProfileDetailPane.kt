@@ -11,6 +11,8 @@ import androidx.compose.material3.adaptive.layout.ListDetailPaneScaffoldRole
 import androidx.compose.material3.adaptive.navigation.rememberListDetailPaneScaffoldNavigator
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavController
+import com.ps.latestgreatestplayground.presentation.document.DocumentDestination
 import com.ps.latestgreatestplayground.presentation.messenger.MessengerPane
 import com.ps.latestgreatestplayground.presentation.profileList.Profile
 
@@ -20,6 +22,7 @@ fun SharedTransitionScope.ProfileDetailPane(
     modifier: Modifier = Modifier,
     animatedVisibilityScope: AnimatedVisibilityScope,
     profile: Profile,
+    navController: NavController,
 ) {
     val navigator = rememberListDetailPaneScaffoldNavigator()
 
@@ -36,6 +39,9 @@ fun SharedTransitionScope.ProfileDetailPane(
                     navigator.navigateTo(
                         pane = ListDetailPaneScaffoldRole.Detail,
                     )
+                },
+                onDocumentClicked = {
+                    navController.navigate(DocumentDestination)
                 },
                 threePaneScaffoldScope = this
             )

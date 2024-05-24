@@ -15,6 +15,8 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.MailOutline
+import androidx.compose.material.icons.filled.Person
+import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -42,7 +44,8 @@ fun SharedTransitionScope.MailingListPane(
     animatedVisibilityScope: AnimatedVisibilityScope,
     threePaneScaffoldScope: ThreePaneScaffoldScope,
     profile: Profile,
-    onMessageClicked: () -> Unit
+    onMessageClicked: () -> Unit,
+    onDocumentClicked: () -> Unit,
 ) {
     threePaneScaffoldScope.AnimatedPane {
         Column(
@@ -110,9 +113,17 @@ fun SharedTransitionScope.MailingListPane(
                                     )
                                 }
 
+
+                                ElevatedButton (onClick = onDocumentClicked) {
+                                    Text(text = stringResource(R.string.document))
+                                    Spacer(modifier = Modifier.width(4.dp))
+                                    Icon(
+                                        imageVector = Icons.Default.Person,
+                                        contentDescription = null
+                                    )
+                                }
                             }
                         }
-
                     }
                 }
             }

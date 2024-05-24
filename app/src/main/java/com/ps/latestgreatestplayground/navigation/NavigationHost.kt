@@ -8,6 +8,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
+import com.ps.latestgreatestplayground.presentation.document.DocumentDestination
+import com.ps.latestgreatestplayground.presentation.document.DocumentScreen
 import com.ps.latestgreatestplayground.presentation.home.HomeDestination
 import com.ps.latestgreatestplayground.presentation.home.HomePane
 import com.ps.latestgreatestplayground.presentation.profileDetail.ProfileDetailDestination
@@ -46,7 +48,12 @@ fun NavigationHost(modifier: Modifier = Modifier, navController: NavHostControll
                     modifier = modifier,
                     profile = navArgs.profile,
                     animatedVisibilityScope = this,
+                    navController = navController,
                 )
+            }
+
+            composable<DocumentDestination> {
+                DocumentScreen(modifier = modifier)
             }
         }
 
