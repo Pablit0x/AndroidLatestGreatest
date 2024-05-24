@@ -15,6 +15,7 @@ composeAnimation = "1.7.0-beta01"
 coil = "2.6.0"
 adaptiveLayoutAndroid = "1.0.0-beta01"
 adaptiveNavigationAndroid = "1.0.0-beta01"
+glanceAppwidget = "1.1.0-rc01"
 
 
 
@@ -40,6 +41,8 @@ androidx-compose-animation = { group = "androidx.compose.animation", name = "ani
 coil = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 androidx-adaptive-layout-android = { group = "androidx.compose.material3.adaptive", name = "adaptive-layout-android", version.ref = "adaptiveLayoutAndroid" }
 androidx-adaptive-navigation-android = { group = "androidx.compose.material3.adaptive", name = "adaptive-navigation-android", version.ref = "adaptiveNavigationAndroid" }
+androidx-glance-appwidget = { group = "androidx.glance", name = "glance-appwidget", version.ref = "glanceAppwidget" }
+androidx-glance-material3 = { group = "androidx.glance", name = "glance-material3", version.ref = "glanceAppwidget" }
 
 
 [plugins]

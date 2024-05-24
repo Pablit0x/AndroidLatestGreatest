@@ -75,8 +75,7 @@ fun MessengerPane(modifier: Modifier = Modifier) {
         Box(modifier = modifier.weight(1f), contentAlignment = Alignment.BottomCenter) {
             Row(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(16.dp),
+                    .fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
